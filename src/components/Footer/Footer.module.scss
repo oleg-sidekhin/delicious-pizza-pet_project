@@ -1,14 +1,12 @@
+@import '../../styles/variables.scss';
+
 .footer {
    display: flex;
    justify-content: center;
    flex-direction: column;
    align-items: center;
    padding: 10px 20px;
-   position: absolute;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   box-shadow: -0.1em 0.3em 1em rgba(0, 0, 0, 0.1);
+   box-shadow: $shadow;
 }
 
 .footerLogo {
@@ -23,11 +21,11 @@
 }
 
 .logoText {
-   font-family: 'Titan One', sans-serif;
+   font-family: $fontTitan;
    font-size: 10px;
 }
 
 .footerAuthor {
-   color: gray;
+   color: $grayColor;
    font-size: 5px;
 }

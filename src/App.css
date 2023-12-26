@@ -1,8 +1,5 @@
 .App {
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
-   width: 80%;
+   width: 100%;
+   background-color: white;
    margin: 0 auto;
-   background-color: lightgoldenrodyellow;
 }

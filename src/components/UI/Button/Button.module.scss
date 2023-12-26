@@ -1,0 +1,17 @@
+.cButton {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 5px 10px;
+   background-color: #fe7f1e;
+   color: white;
+   border: none;
+   border-radius: 12px;
+   transition: all 0.2s ease-in;
+   cursor: pointer;
+   font-size: 10px;
+
+   &:hover {
+      background-color: darken(#fe7f1e, 9);
+   }
+}

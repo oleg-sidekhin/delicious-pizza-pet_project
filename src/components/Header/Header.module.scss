@@ -13,34 +13,6 @@
    padding: 20px 40px;
 }
 
-.headerBottom {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
-   padding-bottom: 10px;
-   position: sticky;
-   top: 0;
-}
-
-.headerNav {
-   display: flex;
-   width: 70%;
-   justify-content: space-around;
-   list-style-type: none;
-
-   li {
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-
-      &:hover {
-         color: $orangeColor;
-         transform: scale(1.1);
-      }
-   }
-}
-
 .headerLogo {
    display: flex;
    align-items: center;

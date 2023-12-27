@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.nav {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   background-color: $whiteColor;
+   padding: 10px;
+   box-shadow: $shadow;
+   position: sticky;
+   top: 0;
+   z-index: 2;
+}
+
+.navList {
+   display: flex;
+   width: 70%;
+   justify-content: space-around;
+   list-style-type: none;
+
+   li {
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+         color: $orangeColor;
+         transform: scale(1.1);
+      }
+   }
+}

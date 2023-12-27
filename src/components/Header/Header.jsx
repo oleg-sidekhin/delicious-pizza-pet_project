@@ -7,7 +7,7 @@ function Header() {
    return (
       <header className={classes.header}>
          <div className={classes.headerTop}>
-            <Link to="/pizzas" className={classes.headerLogo}>
+            <Link to="/" className={classes.headerLogo}>
                <img
                   src="img/logo.png"
                   alt="logo"

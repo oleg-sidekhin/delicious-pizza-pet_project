@@ -1,12 +1,12 @@
 import classes from './MainSection.module.scss';
 import { pizzas } from '../../data/pizzas';
-import PizzaCard from '../PizzaCard/PizzaCard';
+import ItemCard from '../ItemCard/ItemCard';
 
 function MainSection() {
    return (
       <main className={classes.main}>
          {pizzas.map((pizza) => (
-            <PizzaCard {...pizza} />
+            <ItemCard {...pizza} />
          ))}
       </main>
    );

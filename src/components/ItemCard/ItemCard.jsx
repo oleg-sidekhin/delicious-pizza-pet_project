@@ -1,7 +1,7 @@
-import classes from './PizzaCard.module.scss';
+import classes from './ItemCard.module.scss';
 import Button from '../UI/Button/Button';
 
-function PizzaCard({ title, image, description, price }) {
+function ItemCard({ title, image, description, price }) {
    return (
       <div className={classes.card}>
          <img className={classes.cardImg} src={image} alt="pizza" />
@@ -15,4 +15,4 @@ function PizzaCard({ title, image, description, price }) {
    );
 }
 
-export default PizzaCard;
+export default ItemCard;

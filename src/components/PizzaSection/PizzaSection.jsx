@@ -1,6 +1,6 @@
-import classes from './PizzaSection.module.scss';
 import { pizzas } from '../../data/pizzas';
 import ItemCard from '../ItemCard/ItemCard';
+import classes from './PizzaSection.module.scss';
 
 function PizzaSection() {
    return (

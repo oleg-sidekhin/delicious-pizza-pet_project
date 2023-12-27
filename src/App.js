@@ -1,14 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import './App.css';
-import MainSection from './components/MainSection/MainSection';
+import PizzaSection from './components/PizzaSection/PizzaSection';
 
 function App() {
    return (
       <div className="App">
          <Routes>
             <Route path="/pizzas" element={<Layout />}>
-               <Route index element={<MainSection />} />
+               <Route index element={<PizzaSection />} />
             </Route>
          </Routes>
       </div>

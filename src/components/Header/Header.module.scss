@@ -10,7 +10,7 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 20px 40px;
+   padding: 20px 80px;
 }
 
 .headerLogo {
@@ -33,4 +33,25 @@
 
 .cartImg {
    margin-right: 5px;
+}
+
+.btn {
+   position: fixed;
+   right: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 12px 22px;
+   background-color: $orangeColor;
+   color: white;
+   border: none;
+   border-radius: 25px;
+   transition: all 0.2s ease-in;
+   cursor: pointer;
+   font-size: 18px;
+   z-index: 10;
+
+   &:hover {
+      background-color: darken($orangeColor, 9);
+   }
 }

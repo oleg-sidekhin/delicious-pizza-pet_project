@@ -17,8 +17,12 @@ function Navigation() {
             <NavLink className={activeLink} to="/snacks">
                Закуски
             </NavLink>
-            <NavLink className={activeLink}>Десерты</NavLink>
-            <NavLink className={activeLink}>Закуски</NavLink>
+            <NavLink className={activeLink} to="/deserts">
+               Десерты
+            </NavLink>
+            <NavLink className={activeLink} to="/drinks">
+               Напитки
+            </NavLink>
          </ul>
       </nav>
    );

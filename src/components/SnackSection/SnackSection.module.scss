@@ -1,7 +1,7 @@
 .main {
    display: flex;
    flex-wrap: wrap;
-   padding: 40px;
+   padding: 40px 80px;
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    grid-template-rows: repeat(5, 1fr);
@@ -16,7 +16,7 @@
    }
    @media (max-width: 920px) {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(10, 1fr);
+      grid-template-rows: repeat(9, 1fr);
       grid-column-gap: 35px;
       grid-row-gap: 35px;
    }

@@ -4,9 +4,9 @@ import {
    fetchPizzas,
    selectPizzas,
 } from '../../redux/slices/pizzaSlice';
+import { useEffect } from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 import classes from './PizzaSection.module.scss';
-import { useEffect } from 'react';
 
 function PizzaSection() {
    const { pizzas, isLoading } = useSelector(selectPizzas);

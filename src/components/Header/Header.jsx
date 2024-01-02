@@ -15,7 +15,7 @@ function Header() {
                />
                <span className={classes.logoText}>Delicious Pizza</span>
             </Link>
-            <Button position={'fixed'} className={classes.btn}>
+            <Button className={classes.btn}>
                <FiShoppingCart className={classes.cartImg} /> Корзина
             </Button>
          </div>

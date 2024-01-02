@@ -1,13 +1,28 @@
-import { pizzas } from '../../data/pizzas';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+   clearPizzas,
+   fetchPizzas,
+   selectPizzas,
+} from '../../redux/slices/pizzaSlice';
 import ItemCard from '../ItemCard/ItemCard';
 import classes from './PizzaSection.module.scss';
+import { useEffect } from 'react';
 
 function PizzaSection() {
+   const { pizzas, isLoading } = useSelector(selectPizzas);
+   const loading = isLoading === 'succeeded';
+   const dispatch = useDispatch();
+
+   useEffect(() => {
+      dispatch(clearPizzas());
+      dispatch(fetchPizzas());
+   }, [dispatch]);
+
    return (
       <section className={classes.main}>
-         {pizzas.map((pizza) => (
-            <ItemCard {...pizza} />
-         ))}
+         {!loading
+            ? 'Загрузка'
+            : pizzas.map((pizza) => <ItemCard {...pizza} key={pizza.id} />)}
       </section>
    );
 }

@@ -1,6 +1,7 @@
 .card {
    position: relative;
    padding: 5px;
+   max-width: 300px;
    height: 450px;
 
    h3 {
@@ -20,7 +21,6 @@
 
    @media (max-width: 750px) {
       height: 450px;
-      max-width: 350px;
       text-align: center;
       margin: 0 auto;
    }

@@ -1,0 +1,76 @@
+@import '../../styles/variables.scss';
+
+.modalDiv {
+   position: fixed;
+   width: 100vw;
+   height: 100vh;
+   top: 0;
+   background-color: rgba(91, 112, 131, 0.8);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   z-index: 3;
+}
+.modal {
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   width: 65%;
+   min-height: 600px;
+   background-color: white;
+   border-radius: 20px;
+   padding: 40px;
+}
+
+.closeBtnModal {
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   top: -10px;
+   right: -45px;
+   padding: 5px;
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+}
+
+.closeBtnModalInside {
+   width: 50px;
+   height: 50px;
+   color: white;
+   transition: all 0.2s ease-in-out;
+
+   &:hover {
+      transform: scale(1.2);
+   }
+}
+
+.imageModal {
+   display: flex;
+   align-items: center;
+   margin-right: 40px;
+
+   img {
+      width: 400px;
+      height: 400px;
+   }
+}
+
+.buyBtnModal {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 12px 22px;
+   background-color: $orangeColor;
+   color: white;
+   border: none;
+   border-radius: 25px;
+   transition: all 0.2s ease-in;
+   cursor: pointer;
+   font-size: 18px;
+
+   &:hover {
+      background-color: darken($orangeColor, 9);
+   }
+}

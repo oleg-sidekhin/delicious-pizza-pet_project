@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, Link, Outlet } from 'react-router-dom';
 import {
    clearPizzas,
    fetchPizzas,
@@ -10,8 +11,8 @@ import classes from './PizzaSection.module.scss';
 
 function PizzaSection() {
    const { pizzas, isLoading } = useSelector(selectPizzas);
-   const loading = isLoading === 'succeeded';
    const dispatch = useDispatch();
+   const location = useLocation();
 
    useEffect(() => {
       dispatch(clearPizzas());
@@ -20,9 +21,18 @@ function PizzaSection() {
 
    return (
       <section className={classes.main}>
-         {!loading
+         {isLoading === 'pending'
             ? 'Загрузка'
-            : pizzas.map((pizza) => <ItemCard {...pizza} key={pizza.id} />)}
+            : pizzas.map((pizza) => (
+                 <Link
+                    to={`/pizza/${pizza.id}`}
+                    state={{ background: location }}
+                    key={pizza.id}
+                 >
+                    <ItemCard {...pizza} />
+                 </Link>
+              ))}
+         <Outlet />
       </section>
    );
 }

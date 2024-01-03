@@ -6,7 +6,7 @@ function DrinkSection() {
    return (
       <section className={classes.main}>
          {drinks.map((drink) => (
-            <ItemCard {...drink} height={380} />
+            <ItemCard {...drink} height={400} />
          ))}
       </section>
    );

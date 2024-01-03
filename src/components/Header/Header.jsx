@@ -9,7 +9,7 @@ function Header() {
          <div className={classes.headerTop}>
             <Link to="/" className={classes.headerLogo}>
                <img
-                  src="img/logo.png"
+                  src="/img/logo.png"
                   alt="logo"
                   className={classes.logoImage}
                />

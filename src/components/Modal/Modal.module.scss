@@ -57,10 +57,24 @@
    }
 }
 
+.infoModal {
+   display: flex;
+   flex-direction: column;
+   h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+   }
+
+   p {
+      margin-bottom: 50px;
+   }
+}
+
 .buyBtnModal {
    display: flex;
    justify-content: center;
    align-items: center;
+   width: 50%;
    padding: 12px 22px;
    background-color: $orangeColor;
    color: white;

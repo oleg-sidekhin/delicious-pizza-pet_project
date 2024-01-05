@@ -30,13 +30,14 @@ const singleItemSlice = createSlice({
       },
    },
    extraReducers: (builder) => {
-      builder.addCase(fetchSingleItem.pending, (state) => {
-         state.isLoading = 'pending';
-      });
-      builder.addCase(fetchSingleItem.fulfilled, (state, action) => {
-         state.singleItem = action.payload;
-         state.isLoading = 'succeeded';
-      });
+      builder
+         .addCase(fetchSingleItem.pending, (state) => {
+            state.isLoading = 'pending';
+         })
+         .addCase(fetchSingleItem.fulfilled, (state, action) => {
+            state.singleItem = action.payload;
+            state.isLoading = 'succeeded';
+         });
    },
 });
 

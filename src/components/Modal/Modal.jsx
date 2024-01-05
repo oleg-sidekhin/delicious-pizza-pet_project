@@ -8,6 +8,7 @@ import {
    selectSingleItem,
 } from '../../redux/slices/singleItem';
 import Button from '../UI/Button/Button';
+import PizzaOption from '../UI/PizzaOptionBlock/PizzaOption';
 import classes from './Modal.module.scss';
 
 function Modal() {
@@ -45,7 +46,8 @@ function Modal() {
                      <img src={image} alt="item" />
                   </div>
                   <div className={classes.infoModal}>
-                     <strong>{title}</strong>
+                     <PizzaOption />
+                     <h3>{title}</h3>
                      <p>{description}</p>
                      <Button className={classes.buyBtnModal}>
                         Купить за {price} ₽

@@ -21,6 +21,15 @@
    background-color: white;
    border-radius: 20px;
    padding: 40px;
+
+   @media (max-width: 1300px) {
+      min-width: 400px;
+      padding: 40px 20px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 90%;
+   }
 }
 
 .closeBtnModal {
@@ -54,6 +63,14 @@
    img {
       width: 400px;
       height: 400px;
+   }
+
+   @media (max-width: 1300px) {
+      margin: 0 auto;
+      img {
+         width: 280px;
+         height: 280px;
+      }
    }
 }
 

@@ -4,6 +4,10 @@ import axios from 'axios';
 const initialState = {
    singleItem: {},
    isLoading: 'idle',
+   options: {
+      activeSize: 'Маленькая',
+      activeDough: 'Тонкое',
+   },
 };
 
 export const fetchSingleItem = createAsyncThunk(
@@ -28,6 +32,12 @@ const singleItemSlice = createSlice({
       clearSingleItem: (state) => {
          state.singleItem = initialState;
       },
+      setSize: (state, action) => {
+         state.options.activeSize = action.payload;
+      },
+      setDough: (state, action) => {
+         state.options.activeDough = action.payload;
+      },
    },
    extraReducers: (builder) => {
       builder
@@ -41,8 +51,9 @@ const singleItemSlice = createSlice({
    },
 });
 
-export const { clearSingleItem } = singleItemSlice.actions;
+export const { clearSingleItem, setSize, setDough } = singleItemSlice.actions;
 
 export const selectSingleItem = (state) => state.singleItem;
+export const selectSingleItemOption = (state) => state.singleItem.options;
 
 export default singleItemSlice.reducer;

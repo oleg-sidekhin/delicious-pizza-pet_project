@@ -13,20 +13,22 @@
       cursor: pointer;
       border-radius: 18px;
       padding: 8px 16px;
+
+      @media (max-width: 900px) {
+         padding: 8px;
+      }
    }
 
-   input {
-      display: none;
+   input[type='radio'] {
+      visibility: hidden;
+      width: 0;
+      height: 0;
    }
 }
 
 .checked {
    box-shadow: $shadow;
    background-color: $whiteColor;
-   width: 50%;
-   text-align: center;
-   border-radius: 18px;
-   padding: 8px 16px;
    transition: all 0.3s ease-in-out;
 }
 

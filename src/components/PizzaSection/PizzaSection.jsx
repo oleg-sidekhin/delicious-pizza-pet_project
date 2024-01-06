@@ -8,6 +8,7 @@ import {
 import { useEffect } from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 import classes from './PizzaSection.module.scss';
+import PizzaLoader from '../Loaders/PizzaLoader/PizzaLoader';
 
 function PizzaSection() {
   const { pizzas, isLoading } = useSelector(selectPizzas);
@@ -23,7 +24,7 @@ function PizzaSection() {
   return (
     <section className={classes.main}>
       {isLoading === 'pending'
-        ? 'Загрузка'
+        ? [...new Array(28)].map((_, i) => <PizzaLoader key={i} />)
         : pizzas.map((pizza) => (
             <Link
               to={`/pizza/${pizza.id}`}

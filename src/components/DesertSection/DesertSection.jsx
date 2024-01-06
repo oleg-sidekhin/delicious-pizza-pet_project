@@ -9,6 +9,7 @@ import {
 } from '../../redux/slices/desertSlice';
 
 import ItemCard from '../ItemCard/ItemCard';
+import CSLoader from '../Loaders/Combo&SnacksLoader/CSLoader';
 import classes from './DesertSection.module.scss';
 
 function DesertSection() {
@@ -25,7 +26,7 @@ function DesertSection() {
   return (
     <section className={classes.main}>
       {isLoading === 'pending'
-        ? 'Загрузка'
+        ? [...new Array(13)].map((_, i) => <CSLoader key={i} />)
         : deserts.map((desert) => (
             <Link
               to={`/deserts/desert/${desert.id}`}

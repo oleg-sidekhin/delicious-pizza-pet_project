@@ -9,6 +9,7 @@ import {
 } from '../../redux/slices/snackSlice';
 
 import ItemCard from '../ItemCard/ItemCard';
+import CSLoader from '../Loaders/Combo&SnacksLoader/CSLoader';
 import classes from './SnackSection.module.scss';
 
 function SnackSection() {
@@ -25,7 +26,7 @@ function SnackSection() {
   return (
     <section className={classes.main}>
       {isLoading === 'pending'
-        ? 'Загрузка'
+        ? [...new Array(19)].map((_, i) => <CSLoader key={i} />)
         : snacks.map((snack) => (
             <Link
               to={`/snacks/snack/${snack.id}`}

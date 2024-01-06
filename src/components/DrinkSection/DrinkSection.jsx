@@ -9,6 +9,7 @@ import {
 } from '../../redux/slices/drinkSlice';
 
 import ItemCard from '../ItemCard/ItemCard';
+import DrinkLoader from '../Loaders/DrinkLoader/DrinkLoader';
 import classes from './DrinkSection.module.scss';
 
 function DrinkSection() {
@@ -25,7 +26,7 @@ function DrinkSection() {
   return (
     <section className={classes.main}>
       {isLoading === 'pending'
-        ? 'Загрузка'
+        ? [...new Array(9)].map((_, i) => <DrinkLoader key={i} />)
         : drinks.map((drink) => (
             <Link
               to={`/drinks/drink/${drink.id}`}

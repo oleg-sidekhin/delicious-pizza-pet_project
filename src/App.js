@@ -8,7 +8,7 @@ import ComboSection from './components/ComboSection/ComboSection';
 import SnackSection from './components/SnackSection/SnackSection';
 import DesertSection from './components/DesertSection/DesertSection';
 import DrinkSection from './components/DrinkSection/DrinkSection';
-import Modal from './components/Modal/Modal';
+import PizzaModal from './components/PizzaModal/PizzaModal';
 
 import './App.scss';
 
@@ -22,29 +22,29 @@ function App() {
         <Routes location={background || location}>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<PizzaSection />}>
-              <Route path="pizza/:id" element={<Modal />} />
+              <Route path="pizza/:id" element={<PizzaModal />} />
             </Route>
             <Route path="/combos" element={<ComboSection />}>
-              <Route path="combo/:id" element={<Modal />} />
+              <Route path="combo/:id" element={<PizzaModal />} />
             </Route>
             <Route path="snacks" element={<SnackSection />}>
-              <Route path="snack/:id" element={<Modal />} />
+              <Route path="snack/:id" element={<PizzaModal />} />
             </Route>
             <Route path="deserts" element={<DesertSection />}>
-              <Route path="desert/:id" element={<Modal />} />
+              <Route path="desert/:id" element={<PizzaModal />} />
             </Route>
             <Route path="drinks" element={<DrinkSection />}>
-              <Route path="drink/:id" element={<Modal />} />
+              <Route path="drink/:id" element={<PizzaModal />} />
             </Route>
           </Route>
         </Routes>
         {background && (
           <Routes>
-            <Route path="/pizza/:id" element={<Modal />} />
-            <Route path="/combos/combo/:id" element={<Modal />} />
-            <Route path="/snacks/snack/:id" element={<Modal />} />
-            <Route path="/deserts/desert/:id" element={<Modal />} />
-            <Route path="/drinks/drink/:id" element={<Modal />} />
+            <Route path="/pizza/:id" element={<PizzaModal />} />
+            <Route path="/combos/combo/:id" element={<PizzaModal />} />
+            <Route path="/snacks/snack/:id" element={<PizzaModal />} />
+            <Route path="/deserts/desert/:id" element={<PizzaModal />} />
+            <Route path="/drinks/drink/:id" element={<PizzaModal />} />
           </Routes>
         )}
       </div>

@@ -15,6 +15,7 @@ function PizzaSection() {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(clearPizzas());
     dispatch(fetchPizzas());
   }, [dispatch]);

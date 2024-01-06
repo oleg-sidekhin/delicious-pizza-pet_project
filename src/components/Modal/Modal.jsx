@@ -2,13 +2,16 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoClose } from 'react-icons/io5';
+
 import {
   clearSingleItem,
   fetchSingleItem,
   selectSingleItem,
 } from '../../redux/slices/singleItem';
+
 import Button from '../UI/Button/Button';
 import PizzaOption from '../UI/PizzaOptionBlock/PizzaOption';
+
 import classes from './Modal.module.scss';
 
 function Modal() {
@@ -22,6 +25,9 @@ function Modal() {
   useEffect(() => {
     const pizzaPath = 'pizzas';
     const comboPath = 'combos';
+    const snackPath = 'snacks';
+    const desertPath = 'deserts';
+    const drinkPath = 'drinks';
 
     switch (location.state.background.pathname) {
       case '/':
@@ -31,6 +37,18 @@ function Modal() {
       case '/combos':
         dispatch(clearSingleItem());
         dispatch(fetchSingleItem({ pathname: comboPath, id }));
+        break;
+      case '/snacks':
+        dispatch(clearSingleItem());
+        dispatch(fetchSingleItem({ pathname: snackPath, id }));
+        break;
+      case '/deserts':
+        dispatch(clearSingleItem());
+        dispatch(fetchSingleItem({ pathname: desertPath, id }));
+        break;
+      case '/drinks':
+        dispatch(clearSingleItem());
+        dispatch(fetchSingleItem({ pathname: drinkPath, id }));
         break;
     }
   }, [dispatch]);

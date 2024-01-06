@@ -27,15 +27,24 @@ function App() {
             <Route path="/combos" element={<ComboSection />}>
               <Route path="combo/:id" element={<Modal />} />
             </Route>
-            <Route path="snacks" element={<SnackSection />} />
-            <Route path="deserts" element={<DesertSection />} />
-            <Route path="drinks" element={<DrinkSection />} />
+            <Route path="snacks" element={<SnackSection />}>
+              <Route path="snack/:id" element={<Modal />} />
+            </Route>
+            <Route path="deserts" element={<DesertSection />}>
+              <Route path="desert/:id" element={<Modal />} />
+            </Route>
+            <Route path="drinks" element={<DrinkSection />}>
+              <Route path="drink/:id" element={<Modal />} />
+            </Route>
           </Route>
         </Routes>
         {background && (
           <Routes>
             <Route path="/pizza/:id" element={<Modal />} />
             <Route path="/combos/combo/:id" element={<Modal />} />
+            <Route path="/snacks/snack/:id" element={<Modal />} />
+            <Route path="/deserts/desert/:id" element={<Modal />} />
+            <Route path="/drinks/drink/:id" element={<Modal />} />
           </Routes>
         )}
       </div>

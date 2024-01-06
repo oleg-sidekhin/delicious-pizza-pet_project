@@ -15,6 +15,7 @@ function ComboSection() {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(clearCombos());
     dispatch(fetchCombos());
   }, [dispatch]);

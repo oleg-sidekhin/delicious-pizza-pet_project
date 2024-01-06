@@ -1,13 +1,41 @@
-import { drinks } from '../../data/drinks';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import {
+  selectDrinks,
+  clearDrinks,
+  fetchDrinks,
+} from '../../redux/slices/drinkSlice';
+
 import ItemCard from '../ItemCard/ItemCard';
 import classes from './DrinkSection.module.scss';
 
 function DrinkSection() {
+  const { drinks, isLoading } = useSelector(selectDrinks);
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch(clearDrinks());
+    dispatch(fetchDrinks());
+  }, [dispatch]);
+
   return (
     <section className={classes.main}>
-      {drinks.map((drink) => (
-        <ItemCard {...drink} height={400} />
-      ))}
+      {isLoading === 'pending'
+        ? 'Загрузка'
+        : drinks.map((drink) => (
+            <Link
+              to={`/drinks/drink/${drink.id}`}
+              state={{ background: location }}
+              key={drink.id}
+            >
+              <ItemCard {...drink} height={400} />
+            </Link>
+          ))}
+      <Outlet />
     </section>
   );
 }

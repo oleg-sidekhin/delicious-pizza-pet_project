@@ -24,19 +24,21 @@ function ComboSection() {
   }, [dispatch]);
 
   return (
-    <section className={classes.main}>
-      {isLoading === 'pending'
-        ? [...new Array(9)].map((_, i) => <CSLoader key={i} />)
-        : combos.map((combo) => (
-            <Link
-              to={`/combos/combo/${combo.id}`}
-              state={{ background: location }}
-              key={combo.id}
-            >
-              <ItemCard {...combo} />
-            </Link>
-          ))}
-      <Outlet />
+    <section className={classes.wrapper}>
+      <div className={classes.main}>
+        {isLoading === 'pending'
+          ? [...new Array(9)].map((_, i) => <CSLoader key={i} />)
+          : combos.map((combo) => (
+              <Link
+                to={`/combos/combo/${combo.id}`}
+                state={{ background: location }}
+                key={combo.id}
+              >
+                <ItemCard {...combo} />
+              </Link>
+            ))}
+        <Outlet />
+      </div>
     </section>
   );
 }

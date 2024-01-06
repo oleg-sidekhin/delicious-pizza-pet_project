@@ -22,19 +22,21 @@ function PizzaSection() {
   }, [dispatch]);
 
   return (
-    <section className={classes.main}>
-      {isLoading === 'pending'
-        ? [...new Array(28)].map((_, i) => <PizzaLoader key={i} />)
-        : pizzas.map((pizza) => (
-            <Link
-              to={`/pizza/${pizza.id}`}
-              state={{ background: location }}
-              key={pizza.id}
-            >
-              <ItemCard {...pizza} />
-            </Link>
-          ))}
-      <Outlet />
+    <section className={classes.wrapper}>
+      <div className={classes.main}>
+        {isLoading === 'pending'
+          ? [...new Array(28)].map((_, i) => <PizzaLoader key={i} />)
+          : pizzas.map((pizza) => (
+              <Link
+                to={`/pizza/${pizza.id}`}
+                state={{ background: location }}
+                key={pizza.id}
+              >
+                <ItemCard {...pizza} />
+              </Link>
+            ))}
+        <Outlet />
+      </div>
     </section>
   );
 }

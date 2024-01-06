@@ -24,19 +24,21 @@ function DesertSection() {
   }, [dispatch]);
 
   return (
-    <section className={classes.main}>
-      {isLoading === 'pending'
-        ? [...new Array(13)].map((_, i) => <CSLoader key={i} />)
-        : deserts.map((desert) => (
-            <Link
-              to={`/deserts/desert/${desert.id}`}
-              state={{ background: location }}
-              key={desert.id}
-            >
-              <ItemCard {...desert} />
-            </Link>
-          ))}
-      <Outlet />
+    <section className={classes.wrapper}>
+      <div className={classes.main}>
+        {isLoading === 'pending'
+          ? [...new Array(13)].map((_, i) => <CSLoader key={i} />)
+          : deserts.map((desert) => (
+              <Link
+                to={`/deserts/desert/${desert.id}`}
+                state={{ background: location }}
+                key={desert.id}
+              >
+                <ItemCard {...desert} />
+              </Link>
+            ))}
+        <Outlet />
+      </div>
     </section>
   );
 }

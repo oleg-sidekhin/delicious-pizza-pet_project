@@ -24,19 +24,21 @@ function SnackSection() {
   }, [dispatch]);
 
   return (
-    <section className={classes.main}>
-      {isLoading === 'pending'
-        ? [...new Array(19)].map((_, i) => <CSLoader key={i} />)
-        : snacks.map((snack) => (
-            <Link
-              to={`/snacks/snack/${snack.id}`}
-              state={{ background: location }}
-              key={snack.id}
-            >
-              <ItemCard {...snack} />
-            </Link>
-          ))}
-      <Outlet />
+    <section className={classes.wrapper}>
+      <div className={classes.main}>
+        {isLoading === 'pending'
+          ? [...new Array(19)].map((_, i) => <CSLoader key={i} />)
+          : snacks.map((snack) => (
+              <Link
+                to={`/snacks/snack/${snack.id}`}
+                state={{ background: location }}
+                key={snack.id}
+              >
+                <ItemCard {...snack} />
+              </Link>
+            ))}
+        <Outlet />
+      </div>
     </section>
   );
 }

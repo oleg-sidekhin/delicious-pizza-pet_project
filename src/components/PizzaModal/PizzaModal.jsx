@@ -11,6 +11,7 @@ import {
 
 import Button from '../UI/Button/Button';
 import PizzaOption from '../UI/PizzaOptionBlock/PizzaOption';
+import SingleItemLoader from '../Loaders/SingleItemLoader/SingleItemLoader';
 
 import classes from './PizzaModal.module.scss';
 
@@ -31,7 +32,7 @@ function PizzaModal() {
     <div className={classes.modalDiv}>
       <div className={classes.modal}>
         {isLoading === 'pending' ? (
-          'Загрузка'
+          <SingleItemLoader />
         ) : (
           <>
             <div className={classes.imageModal}>

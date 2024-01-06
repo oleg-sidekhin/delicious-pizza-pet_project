@@ -24,19 +24,21 @@ function DrinkSection() {
   }, [dispatch]);
 
   return (
-    <section className={classes.main}>
-      {isLoading === 'pending'
-        ? [...new Array(9)].map((_, i) => <DrinkLoader key={i} />)
-        : drinks.map((drink) => (
-            <Link
-              to={`/drinks/drink/${drink.id}`}
-              state={{ background: location }}
-              key={drink.id}
-            >
-              <ItemCard {...drink} height={400} />
-            </Link>
-          ))}
-      <Outlet />
+    <section className={classes.wrapper}>
+      <div className={classes.main}>
+        {isLoading === 'pending'
+          ? [...new Array(9)].map((_, i) => <DrinkLoader key={i} />)
+          : drinks.map((drink) => (
+              <Link
+                to={`/drinks/drink/${drink.id}`}
+                state={{ background: location }}
+                key={drink.id}
+              >
+                <ItemCard {...drink} height={400} />
+              </Link>
+            ))}
+        <Outlet />
+      </div>
     </section>
   );
 }

@@ -1,51 +1,51 @@
 .card {
-   position: relative;
-   padding: 5px;
-   max-width: 300px;
-   height: 480px;
+  position: relative;
+  padding: 5px;
+  max-width: 300px;
+  height: 480px;
 
-   h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      margin-top: 10px;
-   }
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
 
-   p {
-      font-size: 14px;
-      margin-bottom: 20px;
-   }
+  p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 
-   @media (max-width: 1080px) {
-   }
+  @media (max-width: 1080px) {
+  }
 
-   @media (max-width: 750px) {
-      text-align: center;
-      margin: 0 auto;
-   }
+  @media (max-width: 750px) {
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 .cardImg {
-   display: block;
-   width: 280px;
-   height: 280px;
-   margin-bottom: 10px;
-   margin: 0 auto;
-   transition: all 0.2s ease-in-out;
+  display: block;
+  width: 280px;
+  height: 280px;
+  margin-bottom: 10px;
+  margin: 0 auto;
+  transition: all 0.2s ease-in-out;
 
-   &:hover {
-      transform: translateY(-3px);
-   }
+  &:hover {
+    transform: translateY(-3px);
+  }
 }
 
 .price {
-   display: flex;
-   width: 100%;
-   justify-content: space-between;
-   align-items: center;
-   position: absolute;
-   bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
 
-   span {
-      font-size: 22px;
-   }
+  span {
+    font-size: 22px;
+  }
 }

@@ -1,19 +1,19 @@
 @import '../../../styles/variables.scss';
 
 .cButton {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 10px 20px;
-   background-color: lighten($orangeColor, 15);
-   color: white;
-   border: none;
-   border-radius: 25px;
-   transition: all 0.2s ease-in;
-   cursor: pointer;
-   font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: lighten($orangeColor, 15);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  font-size: 18px;
 
-   &:hover {
-      background-color: darken($orangeColor, 1);
-   }
+  &:hover {
+    background-color: darken($orangeColor, 1);
+  }
 }

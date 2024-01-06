@@ -1,54 +1,54 @@
 @import '../../styles/variables.scss';
 
 .header {
-   display: flex;
-   flex-direction: column;
-   box-shadow: $shadow;
+  display: flex;
+  flex-direction: column;
+  box-shadow: $shadow;
 }
 
 .headerTop {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 20px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
 }
 
 .headerLogo {
-   display: flex;
-   align-items: center;
-   text-decoration: none;
-   color: #000;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
 }
 
 .logoImage {
-   width: 60px;
-   height: 60px;
-   margin-right: 15px;
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
 }
 
 .logoText {
-   font-family: $fontTitan;
-   font-size: 25px;
+  font-family: $fontTitan;
+  font-size: 25px;
 }
 
 .cartImg {
-   margin-right: 5px;
+  margin-right: 5px;
 }
 
 .btn {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 12px 22px;
-   background-color: $orangeColor;
-   color: white;
-   border: none;
-   border-radius: 25px;
-   transition: all 0.2s ease-in;
-   cursor: pointer;
-   font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 22px;
+  background-color: $orangeColor;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  font-size: 18px;
 
-   &:hover {
-      background-color: darken($orangeColor, 9);
-   }
+  &:hover {
+    background-color: darken($orangeColor, 9);
+  }
 }

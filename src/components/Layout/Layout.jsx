@@ -4,14 +4,14 @@ import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 
 function Layout() {
-   return (
-      <div>
-         <Header />
-         <Navigation />
-         <Outlet />
-         <Footer />
-      </div>
-   );
+  return (
+    <div>
+      <Header />
+      <Navigation />
+      <Outlet />
+      <Footer />
+    </div>
+  );
 }
 
 export default Layout;

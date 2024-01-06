@@ -1,50 +1,50 @@
 @import '../../../styles/variables.scss';
 
 .optionBlock {
-   width: 100%;
-   border-radius: 25px;
-   padding: 15px;
-   margin-bottom: 30px;
-   box-shadow: $shadow;
+  width: 100%;
+  border-radius: 25px;
+  padding: 15px;
+  margin-bottom: 30px;
+  box-shadow: $shadow;
 
-   label {
-      width: 50%;
-      text-align: center;
-      cursor: pointer;
-      border-radius: 18px;
-      padding: 8px 16px;
+  label {
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 18px;
+    padding: 8px 16px;
 
-      @media (max-width: 900px) {
-         padding: 8px;
-      }
-   }
+    @media (max-width: 900px) {
+      padding: 8px;
+    }
+  }
 
-   input[type='radio'] {
-      visibility: hidden;
-      width: 0;
-      height: 0;
-   }
+  input[type='radio'] {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
 }
 
 .checked {
-   box-shadow: $shadow;
-   background-color: $whiteColor;
-   transition: all 0.3s ease-in-out;
+  box-shadow: $shadow;
+  background-color: $whiteColor;
+  transition: all 0.3s ease-in-out;
 }
 
 .optionThickness {
-   display: flex;
-   justify-content: space-around;
-   background-color: #efededf9;
-   border-radius: 18px;
-   padding: 2px;
-   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #efededf9;
+  border-radius: 18px;
+  padding: 2px;
+  margin-bottom: 10px;
 }
 
 .optionSize {
-   background-color: #efededf9;
-   border-radius: 18px;
-   padding: 2px;
-   display: flex;
-   justify-content: space-around;
+  background-color: #efededf9;
+  border-radius: 18px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-around;
 }

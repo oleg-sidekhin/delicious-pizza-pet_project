@@ -4,11 +4,11 @@ import combosReducer from './slices/comboSlice';
 import singleItemReducer from './slices/singleItem';
 
 const store = configureStore({
-   reducer: {
-      pizzas: pizzasReducer,
-      combos: combosReducer,
-      singleItem: singleItemReducer,
-   },
+  reducer: {
+    pizzas: pizzasReducer,
+    combos: combosReducer,
+    singleItem: singleItemReducer,
+  },
 });
 
 export default store;

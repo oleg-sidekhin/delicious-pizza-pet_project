@@ -10,9 +10,7 @@ import {
 } from '../../redux/slices/singleItem';
 
 import Button from '../UI/Button/Button';
-import PizzaOption from '../UI/PizzaOptionBlock/PizzaOption';
-
-import classes from './PizzaModal.module.scss';
+import classes from './Modal.module.scss';
 
 function PizzaModal() {
   const navigate = useNavigate();
@@ -23,17 +21,12 @@ function PizzaModal() {
   const { id } = useParams();
 
   useEffect(() => {
-    const pizzaPath = 'pizzas';
     const comboPath = 'combos';
     const snackPath = 'snacks';
     const desertPath = 'deserts';
     const drinkPath = 'drinks';
 
     switch (location.state.background.pathname) {
-      case '/':
-        dispatch(clearSingleItem());
-        dispatch(fetchSingleItem({ pathname: pizzaPath, id }));
-        break;
       case '/combos':
         dispatch(clearSingleItem());
         dispatch(fetchSingleItem({ pathname: comboPath, id }));
@@ -64,7 +57,6 @@ function PizzaModal() {
               <img src={image} alt="item" />
             </div>
             <div className={classes.infoModal}>
-              <PizzaOption />
               <h3>{title}</h3>
               <p>{description}</p>
               <Button className={classes.buyBtnModal}>

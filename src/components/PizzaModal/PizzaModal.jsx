@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoClose } from 'react-icons/io5';
@@ -16,7 +16,6 @@ import classes from './PizzaModal.module.scss';
 
 function PizzaModal() {
   const navigate = useNavigate();
-  const location = useLocation();
   const dispatch = useDispatch();
   const { isLoading, singleItem } = useSelector(selectSingleItem);
   const { image, title, description, price } = singleItem;
@@ -24,33 +23,8 @@ function PizzaModal() {
 
   useEffect(() => {
     const pizzaPath = 'pizzas';
-    const comboPath = 'combos';
-    const snackPath = 'snacks';
-    const desertPath = 'deserts';
-    const drinkPath = 'drinks';
-
-    switch (location.state.background.pathname) {
-      case '/':
-        dispatch(clearSingleItem());
-        dispatch(fetchSingleItem({ pathname: pizzaPath, id }));
-        break;
-      case '/combos':
-        dispatch(clearSingleItem());
-        dispatch(fetchSingleItem({ pathname: comboPath, id }));
-        break;
-      case '/snacks':
-        dispatch(clearSingleItem());
-        dispatch(fetchSingleItem({ pathname: snackPath, id }));
-        break;
-      case '/deserts':
-        dispatch(clearSingleItem());
-        dispatch(fetchSingleItem({ pathname: desertPath, id }));
-        break;
-      case '/drinks':
-        dispatch(clearSingleItem());
-        dispatch(fetchSingleItem({ pathname: drinkPath, id }));
-        break;
-    }
+    dispatch(clearSingleItem());
+    dispatch(fetchSingleItem({ pathname: pizzaPath, id }));
   }, [dispatch]);
 
   return (

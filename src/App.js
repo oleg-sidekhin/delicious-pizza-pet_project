@@ -8,6 +8,7 @@ import ComboSection from './components/pages/ComboSection/ComboSection';
 import SnackSection from './components/pages/SnackSection/SnackSection';
 import DesertSection from './components/pages/DesertSection/DesertSection';
 import DrinkSection from './components/pages/DrinkSection/DrinkSection';
+import CartSection from './components/pages/CartSection/CartSection';
 import PizzaModal from './components/modals/PizzaModal/PizzaModal';
 import Modal from './components/modals/Modal/Modal';
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="drinks" element={<DrinkSection />}>
               <Route path="drink/:id" element={<Modal />} />
             </Route>
+            <Route path="cart" element={<CartSection />} />
           </Route>
         </Routes>
         {background && (

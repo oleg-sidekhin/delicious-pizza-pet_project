@@ -11,9 +11,11 @@ function Header() {
           <img src="/img/logo.png" alt="logo" className={classes.logoImage} />
           <span className={classes.logoText}>Delicious Pizza</span>
         </Link>
-        <Button className={classes.btn}>
-          <FiShoppingCart className={classes.cartImg} /> Корзина
-        </Button>
+        <Link to="cart">
+          <Button className={classes.btn}>
+            <FiShoppingCart className={classes.cartImg} /> Корзина
+          </Button>
+        </Link>
       </div>
     </header>
   );

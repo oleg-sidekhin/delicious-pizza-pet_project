@@ -6,10 +6,10 @@ import {
   fetchDeserts,
   selectDeserts,
   clearDeserts,
-} from '../../redux/slices/desertSlice';
+} from '../../../redux/slices/desertSlice';
 
-import ItemCard from '../ItemCard/ItemCard';
-import CSLoader from '../Loaders/Combo&SnacksLoader/CSLoader';
+import ItemCard from '../../ItemCard/ItemCard';
+import CSLoader from '../../loaders/Combo&SnacksLoader/CSLoader';
 import classes from './DesertSection.module.scss';
 
 function DesertSection() {

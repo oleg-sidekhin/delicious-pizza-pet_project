@@ -6,10 +6,10 @@ import {
   clearSnacks,
   fetchSnacks,
   selectSnacks,
-} from '../../redux/slices/snackSlice';
+} from '../../../redux/slices/snackSlice';
 
-import ItemCard from '../ItemCard/ItemCard';
-import CSLoader from '../Loaders/Combo&SnacksLoader/CSLoader';
+import ItemCard from '../../ItemCard/ItemCard';
+import CSLoader from '../../loaders/Combo&SnacksLoader/CSLoader';
 import classes from './SnackSection.module.scss';
 
 function SnackSection() {

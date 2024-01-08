@@ -2,14 +2,14 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import store from './redux/store';
-import Layout from './components/Layout/Layout';
-import PizzaSection from './components/PizzaSection/PizzaSection';
-import ComboSection from './components/ComboSection/ComboSection';
-import SnackSection from './components/SnackSection/SnackSection';
-import DesertSection from './components/DesertSection/DesertSection';
-import DrinkSection from './components/DrinkSection/DrinkSection';
-import PizzaModal from './components/PizzaModal/PizzaModal';
-import Modal from './components/Modal/Modal';
+import Layout from './components/layouts/Layout';
+import PizzaSection from './components/pages/PizzaSection/PizzaSection';
+import ComboSection from './components/pages/ComboSection/ComboSection';
+import SnackSection from './components/pages/SnackSection/SnackSection';
+import DesertSection from './components/pages/DesertSection/DesertSection';
+import DrinkSection from './components/pages/DrinkSection/DrinkSection';
+import PizzaModal from './components/modals/PizzaModal/PizzaModal';
+import Modal from './components/modals/Modal/Modal';
 
 import './App.scss';
 

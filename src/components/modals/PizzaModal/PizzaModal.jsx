@@ -7,11 +7,11 @@ import {
   clearSingleItem,
   fetchSingleItem,
   selectSingleItem,
-} from '../../redux/slices/singleItem';
+} from '../../../redux/slices/singleItem';
 
-import Button from '../UI/Button/Button';
-import PizzaOption from '../UI/PizzaOptionBlock/PizzaOption';
-import SingleItemLoader from '../Loaders/SingleItemLoader/SingleItemLoader';
+import Button from '../../UI/Button/Button';
+import PizzaOption from '../../UI/PizzaOptionBlock/PizzaOption';
+import SingleItemLoader from '../../loaders/SingleItemLoader/SingleItemLoader';
 
 import classes from './PizzaModal.module.scss';
 

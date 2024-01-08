@@ -6,10 +6,10 @@ import {
   selectDrinks,
   clearDrinks,
   fetchDrinks,
-} from '../../redux/slices/drinkSlice';
+} from '../../../redux/slices/drinkSlice';
 
-import ItemCard from '../ItemCard/ItemCard';
-import DrinkLoader from '../Loaders/DrinkLoader/DrinkLoader';
+import ItemCard from '../../ItemCard/ItemCard';
+import DrinkLoader from '../../loaders/DrinkLoader/DrinkLoader';
 import classes from './DrinkSection.module.scss';
 
 function DrinkSection() {

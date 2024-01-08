@@ -4,11 +4,11 @@ import {
   clearPizzas,
   fetchPizzas,
   selectPizzas,
-} from '../../redux/slices/pizzaSlice';
+} from '../../../redux/slices/pizzaSlice';
 import { useEffect } from 'react';
-import ItemCard from '../ItemCard/ItemCard';
+import ItemCard from '../../ItemCard/ItemCard';
 import classes from './PizzaSection.module.scss';
-import PizzaLoader from '../Loaders/PizzaLoader/PizzaLoader';
+import PizzaLoader from '../../loaders/PizzaLoader/PizzaLoader';
 
 function PizzaSection() {
   const { pizzas, isLoading } = useSelector(selectPizzas);

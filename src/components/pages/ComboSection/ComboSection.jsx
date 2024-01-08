@@ -6,10 +6,10 @@ import {
   selectCombos,
   fetchCombos,
   clearCombos,
-} from '../../redux/slices/comboSlice';
+} from '../../../redux/slices/comboSlice';
 
-import ItemCard from '../ItemCard/ItemCard';
-import CSLoader from '../Loaders/Combo&SnacksLoader/CSLoader';
+import ItemCard from '../../ItemCard/ItemCard';
+import CSLoader from '../../loaders/Combo&SnacksLoader/CSLoader';
 import classes from './ComboSection.module.scss';
 
 function ComboSection() {

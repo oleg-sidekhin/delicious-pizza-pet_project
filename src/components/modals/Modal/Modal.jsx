@@ -7,11 +7,11 @@ import {
   clearSingleItem,
   fetchSingleItem,
   selectSingleItem,
-} from '../../redux/slices/singleItem';
+} from '../../../redux/slices/singleItem';
 
-import Button from '../UI/Button/Button';
+import Button from '../../UI/Button/Button';
 import classes from './Modal.module.scss';
-import SingleItemLoader from '../Loaders/SingleItemLoader/SingleItemLoader';
+import SingleItemLoader from '../../loaders/SingleItemLoader/SingleItemLoader';
 
 function PizzaModal() {
   const navigate = useNavigate();

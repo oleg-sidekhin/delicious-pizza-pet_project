@@ -18,11 +18,7 @@ export const fetchSnacks = createAsyncThunk('snacks/fetchSnacks', async () => {
 const snacksSlice = createSlice({
   name: 'snacks',
   initialState,
-  reducers: {
-    clearSnacks: (state) => {
-      state.snacks = initialState;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchSnacks.pending, (state) => {
       state.isLoading = 'pending';
@@ -33,8 +29,6 @@ const snacksSlice = createSlice({
     });
   },
 });
-
-export const { clearSnacks } = snacksSlice.actions;
 
 export const selectSnacks = (state) => state.snacks;
 

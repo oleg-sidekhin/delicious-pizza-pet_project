@@ -1,11 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, Link, Outlet } from 'react-router-dom';
-import {
-  clearPizzas,
-  fetchPizzas,
-  selectPizzas,
-} from '../../../redux/slices/pizzaSlice';
 import { useEffect } from 'react';
+
+import { fetchPizzas, selectPizzas } from '../../../redux/slices/pizzaSlice';
+
 import ItemCard from '../../ItemCard/ItemCard';
 import classes from './PizzaSection.module.scss';
 import PizzaLoader from '../../loaders/PizzaLoader/PizzaLoader';
@@ -17,7 +15,6 @@ function PizzaSection() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(clearPizzas());
     dispatch(fetchPizzas());
   }, [dispatch]);
 

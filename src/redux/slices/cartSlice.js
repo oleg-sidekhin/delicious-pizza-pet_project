@@ -1,40 +1,68 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   cart: [],
   isLoading: 'idle',
 };
 
-export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
-  try {
-    const { data } = await axios.get(' http://localhost:3001/cart');
-    return data;
-  } catch (error) {
-    alert('Ошибка загрузки');
-  }
-});
-
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    addItem: (state, action) => {
+      const currentItem = state.cart.find(
+        (item) =>
+          item.currentId === action.payload.currentId &&
+          item.size === action.payload.size &&
+          item.dough === action.payload.dough
+      );
+
+      if (currentItem) {
+        ++currentItem.count;
+        currentItem.totalCountPrice =
+          currentItem.totalPrice * currentItem.count;
+      } else {
+        state.cart.push({ ...action.payload, count: 1 });
+      }
+    },
+    plusAmount: (state, action) => {
+      const currentItem = state.cart.find(
+        (item) =>
+          item.id === action.payload.id &&
+          item.size === action.payload.size &&
+          item.dough === action.payload.dough
+      );
+      ++currentItem.count;
+      currentItem.totalCountPrice = currentItem.totalPrice * currentItem.count;
+    },
+    minusAmount: (state, action) => {
+      const currentItem = state.cart.find(
+        (item) =>
+          item.id === action.payload.id &&
+          item.size === action.payload.size &&
+          item.dough === action.payload.dough
+      );
+      if (currentItem.count === 1) {
+        currentItem.count = 1;
+      } else {
+        --currentItem.count;
+      }
+      currentItem.totalCountPrice = currentItem.totalPrice * currentItem.count;
+    },
+    deleteItem: (state, action) => {
+      return {
+        ...state,
+        cart: state.cart.filter((item) => item.id !== action.payload.id),
+      };
+    },
     clearCart: (state) => {
       state.cart = initialState;
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(fetchCart.pending, (state) => {
-      state.isLoading = 'pending';
-    });
-    builder.addCase(fetchCart.fulfilled, (state, action) => {
-      state.cart = action.payload;
-      state.isLoading = 'succeeded';
-    });
-  },
 });
 
-export const { clearCart } = cartSlice.actions;
+export const { clearCart, deleteItem, addItem, plusAmount, minusAmount } =
+  cartSlice.actions;
 
 export const selectCart = (state) => state.cart;
 

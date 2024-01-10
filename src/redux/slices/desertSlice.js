@@ -21,11 +21,7 @@ export const fetchDeserts = createAsyncThunk(
 const desertsSlice = createSlice({
   name: 'deserts',
   initialState,
-  reducers: {
-    clearDeserts: (state) => {
-      state.deserts = initialState;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchDeserts.pending, (state) => {
       state.isLoading = 'pending';
@@ -36,8 +32,6 @@ const desertsSlice = createSlice({
     });
   },
 });
-
-export const { clearDeserts } = desertsSlice.actions;
 
 export const selectDeserts = (state) => state.deserts;
 

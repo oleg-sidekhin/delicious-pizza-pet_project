@@ -2,11 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import {
-  selectDrinks,
-  clearDrinks,
-  fetchDrinks,
-} from '../../../redux/slices/drinkSlice';
+import { selectDrinks, fetchDrinks } from '../../../redux/slices/drinkSlice';
 
 import ItemCard from '../../ItemCard/ItemCard';
 import DrinkLoader from '../../loaders/DrinkLoader/DrinkLoader';
@@ -19,7 +15,6 @@ function DrinkSection() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(clearDrinks());
     dispatch(fetchDrinks());
   }, [dispatch]);
 

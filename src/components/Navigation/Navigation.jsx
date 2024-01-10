@@ -1,5 +1,5 @@
-import classes from './Navigation.module.scss';
 import { NavLink } from 'react-router-dom';
+import classes from './Navigation.module.scss';
 
 const activeLink = ({ isActive }) =>
   isActive ? classes.active : classes.navLink;

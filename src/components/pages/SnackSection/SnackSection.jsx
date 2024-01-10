@@ -2,11 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, Outlet, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import {
-  clearSnacks,
-  fetchSnacks,
-  selectSnacks,
-} from '../../../redux/slices/snackSlice';
+import { fetchSnacks, selectSnacks } from '../../../redux/slices/snackSlice';
 
 import ItemCard from '../../ItemCard/ItemCard';
 import CSLoader from '../../loaders/Combo&SnacksLoader/CSLoader';
@@ -19,7 +15,6 @@ function SnackSection() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(clearSnacks());
     dispatch(fetchSnacks());
   }, [dispatch]);
 

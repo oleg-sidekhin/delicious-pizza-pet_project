@@ -1,8 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 import {
   selectSingleItemOption,
   setSize,
   setDough,
+  setDefaultOptions,
 } from '../../../redux/slices/singleItem';
 import classes from './PizzaOption.module.scss';
 
@@ -13,9 +16,14 @@ function PizzaOption() {
   const dispatch = useDispatch();
   const { activeSize, activeDough } = useSelector(selectSingleItemOption);
 
+  useEffect(() => {
+    dispatch(setDefaultOptions());
+  }, []);
+
   const optionSizeHandler = (event) => {
     dispatch(setSize(event.target.value));
   };
+
   const optionDoughHandler = (event) => {
     dispatch(setDough(event.target.value));
   };

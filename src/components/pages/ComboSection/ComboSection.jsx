@@ -2,11 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Outlet, useLocation, Link } from 'react-router-dom';
 
-import {
-  selectCombos,
-  fetchCombos,
-  clearCombos,
-} from '../../../redux/slices/comboSlice';
+import { selectCombos, fetchCombos } from '../../../redux/slices/comboSlice';
 
 import ItemCard from '../../ItemCard/ItemCard';
 import CSLoader from '../../loaders/Combo&SnacksLoader/CSLoader';
@@ -19,7 +15,6 @@ function ComboSection() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(clearCombos());
     dispatch(fetchCombos());
   }, [dispatch]);
 

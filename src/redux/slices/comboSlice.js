@@ -18,11 +18,7 @@ export const fetchCombos = createAsyncThunk('combos/fetchCombos', async () => {
 const combosSlice = createSlice({
   name: 'combos',
   initialState,
-  reducers: {
-    clearCombos: (state) => {
-      state.combos = initialState;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchCombos.pending, (state) => {
       state.isLoading = 'pending';
@@ -33,8 +29,6 @@ const combosSlice = createSlice({
     });
   },
 });
-
-export const { clearCombos } = combosSlice.actions;
 
 export const selectCombos = (state) => state.combos;
 

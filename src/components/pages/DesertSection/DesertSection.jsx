@@ -2,11 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import {
-  fetchDeserts,
-  selectDeserts,
-  clearDeserts,
-} from '../../../redux/slices/desertSlice';
+import { fetchDeserts, selectDeserts } from '../../../redux/slices/desertSlice';
 
 import ItemCard from '../../ItemCard/ItemCard';
 import CSLoader from '../../loaders/Combo&SnacksLoader/CSLoader';
@@ -19,7 +15,6 @@ function DesertSection() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(clearDeserts());
     dispatch(fetchDeserts());
   }, [dispatch]);
 

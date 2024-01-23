@@ -13,8 +13,8 @@ const cartSlice = createSlice({
       const currentItem = state.cart.find(
         (item) =>
           item.currentId === action.payload.currentId &&
-          item.size === action.payload.size &&
-          item.dough === action.payload.dough
+          item?.size === action.payload?.size &&
+          item?.dough === action.payload?.dough
       );
 
       if (currentItem) {
@@ -29,8 +29,8 @@ const cartSlice = createSlice({
       const currentItem = state.cart.find(
         (item) =>
           item.id === action.payload.id &&
-          item.size === action.payload.size &&
-          item.dough === action.payload.dough
+          item?.size === action.payload?.size &&
+          item?.dough === action.payload?.dough
       );
       ++currentItem.count;
       currentItem.totalCountPrice = currentItem.totalPrice * currentItem.count;
@@ -39,8 +39,8 @@ const cartSlice = createSlice({
       const currentItem = state.cart.find(
         (item) =>
           item.id === action.payload.id &&
-          item.size === action.payload.size &&
-          item.dough === action.payload.dough
+          item?.size === action.payload?.size &&
+          item?.dough === action.payload?.dough
       );
       if (currentItem.count === 1) {
         currentItem.count = 1;
@@ -56,7 +56,7 @@ const cartSlice = createSlice({
       };
     },
     clearCart: (state) => {
-      state.cart = initialState;
+      state.cart = [];
     },
   },
 });

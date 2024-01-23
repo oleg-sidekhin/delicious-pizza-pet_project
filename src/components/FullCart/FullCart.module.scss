@@ -1,0 +1,53 @@
+@import '../../styles/variables.scss';
+
+.fullCart {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  position: relative;
+}
+
+.cartButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  h2 {
+    font-size: 28px;
+  }
+}
+
+.cartContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cartInfo {
+  position: sticky;
+  background-color: #fff;
+  bottom: 20px;
+  box-shadow: $shadow;
+  border-radius: 15px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+}
+
+.cartInfoTotal {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

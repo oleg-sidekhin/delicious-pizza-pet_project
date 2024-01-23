@@ -9,7 +9,7 @@ import {
   selectSingleItem,
   selectSingleItemOption,
 } from '../../../redux/slices/singleItem';
-import { addItem, selectCart } from '../../../redux/slices/cartSlice';
+import { addItem } from '../../../redux/slices/cartSlice';
 
 import Button from '../../UI/Button/Button';
 import PizzaOption from '../../UI/PizzaOptionBlock/PizzaOption';
@@ -24,9 +24,11 @@ function PizzaModal() {
   const { activeSize, activeDough } = useSelector(selectSingleItemOption);
   const { isLoading, singleItem } = useSelector(selectSingleItem);
   const { image, title, description, price, totalPrice } = singleItem;
+  const { id } = useParams();
+
   const findedItem = useSelector(
     (state) =>
-      state.cart.cart &&
+      state.cart.cart.length > 0 &&
       state.cart.cart.find(
         (item) =>
           item.title === title &&
@@ -34,8 +36,6 @@ function PizzaModal() {
           item.dough === activeDough
       )
   );
-
-  const { id } = useParams();
 
   useEffect(() => {
     const pizzaPath = 'pizzas';
@@ -73,7 +73,9 @@ function PizzaModal() {
               <h3>{title}</h3>
               <p>{description}</p>
               <Button className={classes.buyBtnModal} onClick={handlePostItem}>
-                {!!findedItem ? 'В корзине' : `Купить за ${totalPrice} ₽`}
+                {!!findedItem
+                  ? `Добавить (${findedItem.count} шт.)`
+                  : `Купить за ${totalPrice} ₽`}
               </Button>
             </div>
           </>

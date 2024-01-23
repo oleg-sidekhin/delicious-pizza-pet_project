@@ -2,11 +2,13 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoClose } from 'react-icons/io5';
+import { v4 as uuidv4 } from 'uuid';
 
 import {
   fetchSingleItem,
   selectSingleItem,
 } from '../../../redux/slices/singleItem';
+import { addItem } from '../../../redux/slices/cartSlice';
 
 import Button from '../../UI/Button/Button';
 import classes from './Modal.module.scss';
@@ -17,8 +19,14 @@ function PizzaModal() {
   const location = useLocation();
   const dispatch = useDispatch();
   const { isLoading, singleItem } = useSelector(selectSingleItem);
-  const { image, title, description, price } = singleItem;
+  const { image, title, description, price, totalPrice } = singleItem;
   const { id } = useParams();
+
+  const findedItem = useSelector(
+    (state) =>
+      state.cart.cart.length > 0 &&
+      state.cart.cart.find((item) => item.currentId === Number(id))
+  );
 
   useEffect(() => {
     const comboPath = 'combos';
@@ -42,6 +50,19 @@ function PizzaModal() {
     }
   }, [dispatch]);
 
+  const handlePostItem = () => {
+    const cartItem = {
+      id: uuidv4(),
+      currentId: Number(id),
+      image,
+      title,
+      price,
+      totalPrice,
+      totalCountPrice: totalPrice,
+    };
+    dispatch(addItem(cartItem));
+  };
+
   return (
     <div className={classes.modalDiv}>
       <div className={classes.modal}>
@@ -55,8 +76,10 @@ function PizzaModal() {
             <div className={classes.infoModal}>
               <h3>{title}</h3>
               <p>{description}</p>
-              <Button className={classes.buyBtnModal}>
-                Купить за {price} ₽
+              <Button className={classes.buyBtnModal} onClick={handlePostItem}>
+                {!!findedItem
+                  ? `Добавить (${findedItem.count} шт.)`
+                  : `Купить за ${totalPrice} ₽`}
               </Button>
             </div>
           </>

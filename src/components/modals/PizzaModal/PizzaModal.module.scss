@@ -15,13 +15,14 @@
 .modal {
   position: relative;
   display: flex;
-  width: 65%;
+  width: 60vw;
   background-color: white;
   border-radius: 20px;
   padding: 80px 40px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     min-width: 450px;
+    width: 45vw;
     padding: 40px 60px;
     justify-content: center;
     align-items: center;
@@ -71,7 +72,7 @@
     height: 400px;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     margin: 0 auto;
     img {
       width: 280px;
@@ -114,7 +115,7 @@
     background-color: darken($orangeColor, 9);
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
     width: 100%;
   }
 }

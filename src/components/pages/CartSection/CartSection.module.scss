@@ -1,17 +1,7 @@
 .wrapper {
   padding: 80px;
+  padding-bottom: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.emptyCart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  img {
-    width: 450px;
-    height: 450px;
-  }
 }

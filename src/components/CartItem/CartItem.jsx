@@ -6,6 +6,7 @@ import {
   minusAmount,
 } from '../../redux/slices/cartSlice';
 
+import Button from '../UI/Button/Button';
 import classes from './CartItem.module.scss';
 
 function CartItem(props) {
@@ -27,20 +28,33 @@ function CartItem(props) {
 
   return (
     <div className={classes.cartItem}>
-      <div className={classes.info}>
-        <img src={image} alt="" width={50} height={50} />
-        <h2>{title}</h2>
-      </div>
-
-      <div className={classes.btns}>
+      <div className={classes.infoBlock}>
+        <div className={classes.info}>
+          <div className={classes.infoImg}>
+            <img src={image} alt="image" />
+          </div>
+          <h2>{title}</h2>
+        </div>
         <div className={classes.options}>
           <span>{size}</span>
           <span>{dough}</span>
         </div>
-        <button onClick={() => handleMinus({ id, size, dough })}>-</button>
-        {count}
-        <button onClick={() => handlePlus({ id, size, dough })}>+</button>
-        <strong>{totalCountPrice}</strong>
+      </div>
+      <div className={classes.btns}>
+        <button
+          className={classes.btn}
+          onClick={() => handleMinus({ id, size, dough })}
+        >
+          -
+        </button>
+        {count} шт.
+        <button
+          className={classes.btn}
+          onClick={() => handlePlus({ id, size, dough })}
+        >
+          +
+        </button>
+        <strong>{totalCountPrice} ₽</strong>
         <button onClick={() => handleClearCart({ id, size, dough })}>
           Удалить
         </button>

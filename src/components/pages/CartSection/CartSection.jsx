@@ -2,7 +2,8 @@ import { useSelector } from 'react-redux';
 
 import { selectCart } from '../../../redux/slices/cartSlice';
 
-import CartItem from '../../CartItem/CartItem';
+import FullCart from '../../FullCart/FullCart';
+import EmptyCard from '../../EmptyCard/EmptyCard';
 import classes from './CartSection.module.scss';
 
 function CartSection() {
@@ -10,14 +11,7 @@ function CartSection() {
 
   return (
     <div className={classes.wrapper}>
-      {cart.length > 0 ? (
-        cart.map((item) => <CartItem key={item.id} {...item} />)
-      ) : (
-        <div className={classes.emptyCart}>
-          <img src="/img/emptyCart.png" alt="emptyCart" />
-          <h2>Корзина пуста</h2>
-        </div>
-      )}
+      {cart.length > 0 ? <FullCart /> : <EmptyCard />}
     </div>
   );
 }

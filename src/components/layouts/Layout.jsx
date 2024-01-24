@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 import classes from './Layout.module.scss';
+import FilterPizza from '../FilterPizza/FilterPizza';
 
 function Layout() {
   const location = useLocation();
@@ -11,6 +12,7 @@ function Layout() {
     <div className={classes.layout}>
       <Header />
       {location.pathname != '/cart' && <Navigation />}
+      <FilterPizza />
       <Outlet />
       <Footer />
     </div>

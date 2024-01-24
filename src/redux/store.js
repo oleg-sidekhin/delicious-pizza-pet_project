@@ -6,6 +6,7 @@ import desertsReducer from './slices/desertSlice';
 import drinksReducer from './slices/drinkSlice';
 import singleItemReducer from './slices/singleItem';
 import cartReducer from './slices/cartSlice';
+import filterReducer from './slices/filterSlice';
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     drinks: drinksReducer,
     singleItem: singleItemReducer,
     cart: cartReducer,
+    filter: filterReducer,
   },
 });
 

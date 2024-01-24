@@ -16,9 +16,17 @@
 
 .navList {
   display: flex;
-  width: 70%;
+  width: 1180px;
   justify-content: space-around;
   list-style-type: none;
+
+  @media (max-width: 1280px) {
+    width: 900px;
+  }
+
+  @media (max-width: 1080px) {
+    width: 680px;
+  }
 }
 
 .navLink {

@@ -1,0 +1,62 @@
+.filterWrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.container {
+  width: 1320px;
+  padding: 0 40px 0 40px;
+  margin: 0 auto;
+
+  @media (max-width: 1280px) {
+    width: 1040px;
+  }
+
+  @media (max-width: 1080px) {
+    width: 820px;
+  }
+}
+
+.categories {
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: 720px) {
+    flex-wrap: wrap;
+  }
+}
+
+.filterBtn {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 15px 20px;
+  background-color: rgb(226, 225, 225);
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+
+  input[type='radio'] {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.759);
+    color: white;
+  }
+}
+
+.checked {
+  background-color: rgba(0, 0, 0, 0.759);
+  color: white;
+  font-size: 14px;
+  padding: 15px 20px;
+  border-radius: 25px;
+
+  input[type='radio'] {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}

@@ -4,6 +4,11 @@ const initialState = {
   filter: {
     activeCategory: 'Все',
   },
+  sort: {
+    activeText: 'По популярности (по возрастанию)',
+    activeSort: 'rating',
+    activeOrder: 'asc',
+  },
 };
 
 const filterSlice = createSlice({
@@ -13,12 +18,16 @@ const filterSlice = createSlice({
     setCategory: (state, action) => {
       state.filter.activeCategory = action.payload;
     },
+    setSort: (state, action) => {
+      state.sort = action.payload;
+    },
   },
 });
 
-export const { setCategory } = filterSlice.actions;
+export const { setCategory, setSort } = filterSlice.actions;
 
 export const selectFilterCategory = (state) =>
   state.filter.filter.activeCategory;
+export const selectFilterSort = (state) => state.filter.sort;
 
 export default filterSlice.reducer;

@@ -6,14 +6,23 @@ const initialState = {
   isLoading: 'idle',
 };
 
-export const fetchPizzas = createAsyncThunk('pizzas/fetchPizzas', async () => {
-  try {
-    const { data } = await axios.get(' http://localhost:3001/pizzas');
-    return data;
-  } catch (error) {
-    alert('Ошибка загрузки');
+export const fetchPizzas = createAsyncThunk(
+  'pizzas/fetchPizzas',
+  async ({ activeCategory, activeSort, activeOrder }) => {
+    try {
+      const { data } = await axios.get(`http://localhost:3001/pizzas?`, {
+        params: {
+          category_like: activeCategory,
+          _sort: activeSort,
+          _order: activeOrder,
+        },
+      });
+      return data;
+    } catch (error) {
+      alert('Ошибка загрузки');
+    }
   }
-});
+);
 
 const pizzasSlice = createSlice({
   name: 'pizzas',

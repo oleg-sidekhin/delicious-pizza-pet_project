@@ -6,7 +6,6 @@ import {
   minusAmount,
 } from '../../redux/slices/cartSlice';
 
-import Button from '../UI/Button/Button';
 import classes from './CartItem.module.scss';
 
 function CartItem(props) {

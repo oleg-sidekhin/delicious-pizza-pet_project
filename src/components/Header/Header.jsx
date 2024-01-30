@@ -1,12 +1,14 @@
 import { FiShoppingCart } from 'react-icons/fi';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
+import { useTotalCount } from '../../hooks/useTotalCount';
 import Button from '../UI/Button/Button';
 import classes from './Header.module.scss';
 
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { totalAmount, totalCount } = useTotalCount();
 
   return (
     <header className={classes.header}>
@@ -23,7 +25,8 @@ function Header() {
           ) : (
             <Link to="cart">
               <Button className={classes.btn}>
-                <FiShoppingCart className={classes.cartImg} /> Корзина
+                <FiShoppingCart className={classes.cartImg} /> {totalAmount} шт.
+                | {totalCount} ₽
               </Button>
             </Link>
           )}

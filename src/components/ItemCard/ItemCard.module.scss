@@ -26,9 +26,9 @@
 
 .cardImg {
   display: block;
-  width: 250px;
-  height: 250px;
-  margin-left: 25px;
+  width: 270px;
+  height: 270px;
+  margin-left: 18px;
   transition: all 0.2s ease-in-out;
 
   &:hover {
@@ -46,5 +46,6 @@
 
   span {
     font-size: 22px;
+    font-weight: 600;
   }
 }

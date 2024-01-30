@@ -7,12 +7,11 @@ import {
   setDough,
   setDefaultOptions,
 } from '../../../redux/slices/singleItem';
+import { doughs, sizes } from '../../../data/doughs&sizes';
+
 import classes from './PizzaOption.module.scss';
 
 function PizzaOption() {
-  const doughs = ['Тонкое', 'Традиционное'];
-  const sizes = ['Маленькая', 'Средняя', 'Большая'];
-
   const dispatch = useDispatch();
   const { activeSize, activeDough } = useSelector(selectSingleItemOption);
 

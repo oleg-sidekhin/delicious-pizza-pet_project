@@ -12,7 +12,7 @@ function Layout() {
     <div className={classes.layout}>
       <Header />
       {location.pathname != '/cart' && <Navigation />}
-      {location.pathname === '/' && <FilterPizza />}
+      <FilterPizza />
       <Outlet />
       <Footer />
     </div>

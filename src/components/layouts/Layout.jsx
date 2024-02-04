@@ -11,8 +11,7 @@ function Layout() {
   return (
     <div className={classes.layout}>
       <Header />
-      {location.pathname != '/cart' && <Navigation />}
-      <FilterPizza />
+      {location.pathname !== '/cart' && <Navigation /> && <FilterPizza />}
       <Outlet />
       <Footer />
     </div>

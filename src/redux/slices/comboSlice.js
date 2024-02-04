@@ -8,7 +8,9 @@ const initialState = {
 
 export const fetchCombos = createAsyncThunk('combos/fetchCombos', async () => {
   try {
-    const { data } = await axios.get(' http://localhost:3001/combos');
+    const { data } = await axios.get(
+      'https://json-server-pizza-seven.vercel.app/combos'
+    );
     return data;
   } catch (error) {
     alert('Ошибка загрузки');

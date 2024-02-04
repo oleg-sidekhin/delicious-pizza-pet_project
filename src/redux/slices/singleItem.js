@@ -16,7 +16,7 @@ export const fetchSingleItem = createAsyncThunk(
     const { pathname, id } = params;
     try {
       const { data } = await axios.get(
-        `http://localhost:3001/${pathname}/${id}`
+        `https://json-server-pizza-seven.vercel.app/${pathname}/${id}`
       );
       return data;
     } catch (error) {
@@ -73,37 +73,37 @@ const singleItemSlice = createSlice({
       state.options.activeDough = action.payload;
 
       if (
-        action.payload == 'Тонкое' &&
+        action.payload === 'Тонкое' &&
         state.options.activeSize === 'Маленькая'
       ) {
         state.singleItem.totalPrice = state.singleItem.price;
       }
       if (
-        action.payload == 'Тонкое' &&
+        action.payload === 'Тонкое' &&
         state.options.activeSize === 'Средняя'
       ) {
         state.singleItem.totalPrice = state.singleItem.price + 80;
       }
       if (
-        action.payload == 'Тонкое' &&
+        action.payload === 'Тонкое' &&
         state.options.activeSize === 'Большая'
       ) {
         state.singleItem.totalPrice = state.singleItem.price + 160;
       }
       if (
-        action.payload == 'Традиционное' &&
+        action.payload === 'Традиционное' &&
         state.options.activeSize === 'Маленькая'
       ) {
         state.singleItem.totalPrice = state.singleItem.price + 80;
       }
       if (
-        action.payload == 'Традиционное' &&
+        action.payload === 'Традиционное' &&
         state.options.activeSize === 'Средняя'
       ) {
         state.singleItem.totalPrice = state.singleItem.price + 160;
       }
       if (
-        action.payload == 'Традиционное' &&
+        action.payload === 'Традиционное' &&
         state.options.activeSize === 'Большая'
       ) {
         state.singleItem.totalPrice = state.singleItem.price + 240;

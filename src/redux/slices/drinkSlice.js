@@ -8,7 +8,9 @@ const initialState = {
 
 export const fetchDrinks = createAsyncThunk('drinks/fetchDrinks', async () => {
   try {
-    const { data } = await axios.get(' http://localhost:3001/drinks');
+    const { data } = await axios.get(
+      'https://json-server-pizza-seven.vercel.app/drinks'
+    );
     return data;
   } catch (error) {
     alert('Ошибка загрузки');

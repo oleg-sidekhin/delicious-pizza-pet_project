@@ -10,7 +10,9 @@ export const fetchDeserts = createAsyncThunk(
   'deserts/fetchDeserts',
   async () => {
     try {
-      const { data } = await axios.get(' http://localhost:3001/deserts');
+      const { data } = await axios.get(
+        'https://json-server-pizza-seven.vercel.app/deserts'
+      );
       return data;
     } catch (error) {
       alert('Ошибка загрузки');

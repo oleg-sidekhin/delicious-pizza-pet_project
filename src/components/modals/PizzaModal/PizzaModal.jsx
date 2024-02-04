@@ -60,30 +60,32 @@ function PizzaModal() {
 
   return (
     <div className={classes.modalDiv}>
-      <div className={classes.modal}>
-        {isLoading === 'pending' ? (
-          <SingleItemLoader />
-        ) : (
-          <>
-            <div className={classes.imageModal}>
-              <img src={image} alt="item" />
-            </div>
-            <div className={classes.infoModal}>
-              <PizzaOption />
-              <h3>{title}</h3>
-              <p>{description}</p>
-              <Button className={classes.buyBtnModal} onClick={handlePostItem}>
-                {!!findedItem
-                  ? `Добавить (${findedItem.count} шт.)`
-                  : `Купить за ${totalPrice} ₽`}
-              </Button>
-            </div>
-          </>
-        )}
-        <button className={classes.closeBtnModal} onClick={() => navigate(-1)}>
-          <IoClose className={classes.closeBtnModalInside} />
-        </button>
-      </div>
+      {isLoading === 'pending' ? (
+        <SingleItemLoader />
+      ) : (
+        <div className={classes.modal}>
+          <div className={classes.imageModal}>
+            <img src={image} alt="item" />
+          </div>
+          <div className={classes.infoModal}>
+            <PizzaOption />
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <Button className={classes.buyBtnModal} onClick={handlePostItem}>
+              {!!findedItem
+                ? `Добавить (${findedItem.count} шт.)`
+                : `Купить за ${totalPrice} ₽`}
+            </Button>
+          </div>
+
+          <button
+            className={classes.closeBtnModal}
+            onClick={() => navigate(-1)}
+          >
+            <IoClose className={classes.closeBtnModalInside} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

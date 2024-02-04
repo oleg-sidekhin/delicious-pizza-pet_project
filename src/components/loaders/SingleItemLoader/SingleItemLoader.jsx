@@ -13,7 +13,6 @@ function SingleItemLoader() {
         wrapperClass=""
         visible={true}
       />
-      <p>Загрузка...</p>
     </div>
   );
 }

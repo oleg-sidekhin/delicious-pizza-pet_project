@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoClose } from 'react-icons/io5';
@@ -20,6 +20,16 @@ import classes from './PizzaModal.module.scss';
 function PizzaModal() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state.background) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   const { activeSize, activeDough } = useSelector(selectSingleItemOption);
   const { isLoading, singleItem } = useSelector(selectSingleItem);

@@ -6,43 +6,80 @@
   justify-content: center;
   align-items: center;
   background-color: $whiteColor;
-  padding: 15px;
+  padding: 15px 80px;
   box-shadow: $shadow;
   position: sticky;
   top: 0;
   z-index: 2;
   opacity: 0.93;
+
+  @media (max-width: 576px) {
+    padding: 10px 20px;
+  }
 }
 
 .navList {
   display: flex;
-  width: 1180px;
   justify-content: space-around;
   list-style-type: none;
+  width: 1280px;
 
-  @media (max-width: 1280px) {
-    width: 900px;
+  @media (max-width: 576px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: $shadow;
+    padding-left: 30px;
+    padding-top: 80px;
+    transition: transform 0.3s linear;
+    transform: translate(-100%);
   }
+}
 
-  @media (max-width: 1080px) {
-    width: 680px;
-  }
+.openedNav {
+  transform: translate(0%);
 }
 
 .navLink {
   color: black;
   text-decoration: none;
-  font-size: 16px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  font-size: 16px;
 
   &:hover {
     color: $orangeColor;
     transform: scale(1.1);
+  }
+
+  @media (max-width: 576px) {
+    font-size: 20px;
   }
 }
 
 .active {
   color: $orangeColor;
   text-decoration: none;
+
+  @media (max-width: 576px) {
+    font-size: 20px;
+  }
+}
+
+.burgerIcon {
+  display: none;
+
+  @media (max-width: 576px) {
+    display: block;
+    margin-left: auto;
+    width: 25px;
+    height: 25px;
+  }
 }

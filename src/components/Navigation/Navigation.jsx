@@ -1,13 +1,23 @@
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineClose } from 'react-icons/ai';
+
 import classes from './Navigation.module.scss';
 
 const activeLink = ({ isActive }) =>
   isActive ? classes.active : classes.navLink;
 
 function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className={classes.nav}>
-      <ul className={classes.navList}>
+      <ul
+        className={
+          isOpen ? `${classes.openedNav} ${classes.navList}` : classes.navList
+        }
+      >
         <NavLink className={activeLink} to="/">
           Пиццы
         </NavLink>
@@ -24,6 +34,21 @@ function Navigation() {
           Напитки
         </NavLink>
       </ul>
+      {isOpen ? (
+        <AiOutlineClose
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+          className={classes.burgerIcon}
+        />
+      ) : (
+        <GiHamburgerMenu
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+          className={classes.burgerIcon}
+        />
+      )}
     </nav>
   );
 }

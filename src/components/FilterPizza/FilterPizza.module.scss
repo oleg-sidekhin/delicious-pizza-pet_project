@@ -1,5 +1,6 @@
 .filterWrapper {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 1320px;
   padding: 40px 40px 0 40px;
@@ -10,6 +11,17 @@
   }
 
   @media (max-width: 1080px) {
-    width: 820px;
+    width: 768px;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+
+  @media (max-width: 767px) {
+    width: 620px;
+  }
+
+  @media (max-width: 520px) {
+    width: 450px;
   }
 }

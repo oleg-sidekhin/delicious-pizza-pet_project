@@ -8,14 +8,12 @@ import FilterPizza from '../FilterPizza/FilterPizza';
 function Layout() {
   const location = useLocation();
 
-  console.log(location);
-
   return (
     <div className={classes.layout}>
       <Header />
-      {location.pathname !== '/cart' && <Navigation /> && <FilterPizza />}
-      {location.pathname !== '/cart' && <FilterPizza />}
-      <Outlet />
+      {location.pathname !== '/cart' && <Navigation />}
+      {/* {location.pathname !== '/cart' && <FilterPizza />} */}
+      {/* <Outlet /> */}
       <Footer />
     </div>
   );

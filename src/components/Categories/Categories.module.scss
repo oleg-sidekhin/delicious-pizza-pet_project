@@ -16,6 +16,12 @@
     width: 0;
     height: 0;
   }
+
+  @media (max-width: 576px) {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+  }
 }
 
 .filterBtn {
@@ -35,5 +41,11 @@
   &:hover {
     background-color: rgba(0, 0, 0, 0.759);
     color: white;
+  }
+
+  @media (max-width: 576px) {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
   }
 }

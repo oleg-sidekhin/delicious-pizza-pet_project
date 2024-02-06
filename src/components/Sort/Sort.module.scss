@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 320px;
+  position: relative;
 }
 
 .sortNav {
@@ -26,7 +27,7 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 235px;
+  top: 25px;
   width: 325px;
   background-color: $whiteColor;
   border-radius: 12px;
@@ -34,6 +35,22 @@
   overflow: hidden;
   box-shadow: $shadow;
   animation: show 0.1s forwards;
+  overflow: auto;
+
+  @media (max-width: 992px) {
+    top: 60px;
+    width: 30vw;
+  }
+
+  @media (max-width: 767px) {
+    top: 80px;
+    width: 35vw;
+  }
+
+  @media (max-width: 576px) {
+    top: 40px;
+    width: 90vw;
+  }
 }
 
 .sortProperty {

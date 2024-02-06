@@ -15,6 +15,7 @@
 
   @media (max-width: 576px) {
     padding: 10px 20px;
+    opacity: 1;
   }
 }
 
@@ -75,6 +76,7 @@
 
 .burgerIcon {
   display: none;
+  cursor: pointer;
 
   @media (max-width: 576px) {
     display: block;

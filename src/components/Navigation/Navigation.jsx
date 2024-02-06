@@ -9,6 +9,14 @@ const activeLink = ({ isActive }) =>
   isActive ? classes.active : classes.navLink;
 
 function Navigation() {
+  const navLinks = [
+    { title: 'Пиццы', path: '/' },
+    { title: 'Комбо', path: '/combos' },
+    { title: 'Закуски', path: '/snacks' },
+    { title: 'Десерты', path: '/deserts' },
+    { title: 'Напитки', path: '/drinks' },
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,21 +26,15 @@ function Navigation() {
           isOpen ? `${classes.openedNav} ${classes.navList}` : classes.navList
         }
       >
-        <NavLink className={activeLink} to="/">
-          Пиццы
-        </NavLink>
-        <NavLink className={activeLink} to="/combos">
-          Комбо
-        </NavLink>
-        <NavLink className={activeLink} to="/snacks">
-          Закуски
-        </NavLink>
-        <NavLink className={activeLink} to="/deserts">
-          Десерты
-        </NavLink>
-        <NavLink className={activeLink} to="/drinks">
-          Напитки
-        </NavLink>
+        {navLinks.map((link) => (
+          <NavLink
+            className={activeLink}
+            onClick={() => setIsOpen(false)}
+            to={link.path}
+          >
+            {link.title}
+          </NavLink>
+        ))}
       </ul>
       {isOpen ? (
         <AiOutlineClose

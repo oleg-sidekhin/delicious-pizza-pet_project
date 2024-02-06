@@ -37,16 +37,6 @@
   animation: show 0.1s forwards;
   overflow: auto;
 
-  @media (max-width: 992px) {
-    top: 60px;
-    width: 30vw;
-  }
-
-  @media (max-width: 767px) {
-    top: 80px;
-    width: 35vw;
-  }
-
   @media (max-width: 576px) {
     top: 40px;
     width: 90vw;
@@ -54,7 +44,7 @@
 }
 
 .sortProperty {
-  padding: 15px;
+  padding: 14px;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;

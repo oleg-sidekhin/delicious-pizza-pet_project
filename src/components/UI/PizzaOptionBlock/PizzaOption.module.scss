@@ -24,6 +24,10 @@
     width: 0;
     height: 0;
   }
+
+  @media (max-width: 576px) {
+    margin-bottom: 20px;
+  }
 }
 
 .checked {

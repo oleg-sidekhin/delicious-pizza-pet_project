@@ -9,12 +9,13 @@
   padding: 15px 80px;
   box-shadow: $shadow;
   position: sticky;
-  top: 0;
+  top: 80px;
   z-index: 2;
   opacity: 0.93;
 
   @media (max-width: 576px) {
     padding: 10px 20px;
+    top: 60px;
     opacity: 1;
   }
 }

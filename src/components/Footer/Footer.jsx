@@ -1,6 +1,9 @@
+import { useLocation } from 'react-router-dom';
 import classes from './Footer.module.scss';
 
 function Footer() {
+  const { pathname } = useLocation();
+
   return (
     <footer className={classes.footer}>
       <div className={classes.footerLogo}>

@@ -16,30 +16,43 @@ function FullCart() {
     dispatch(clearCart());
   };
 
+  const handlerMakeOrder = () => {
+    dispatch(clearCart());
+    alert(
+      `Заказ оформлен. Итого:  \n - Кол-во: ${totalAmount} \n - Сумма: ${totalCount} руб.`
+    );
+  };
+
   return (
     <div className={classes.fullCart}>
       <div className={classes.cartContent}>
-        <div className={classes.cartButtons}>
+        <div className={classes.cartOptions}>
           <h2>Корзина</h2>
-          <Button onClick={handlerclearCart}>Очистить корзину</Button>
+          <Button className={classes.cartButtons} onClick={handlerclearCart}>
+            Очистить корзину
+          </Button>
         </div>
         <div className={classes.cartList}>
           {cart.map((item) => (
             <CartItem key={item.id} {...item} />
           ))}
         </div>
-        <div className={classes.cartInfo}>
-          <div className={classes.cartInfoTotal}>
-            <h2>Итого:</h2>
-            <p>
+      </div>
+      <div className={classes.cartInfo}>
+        <div className={classes.cartInfoTotal}>
+          <h2>Итого:</h2>
+          <div className={classes.totalAmountandCount}>
+            <span>
               Кол-во: <strong>{totalAmount}</strong> шт.
-            </p>
-            <p>
+            </span>
+            <span>
               Цена: <strong>{totalCount}</strong> руб.
-            </p>
+            </span>
           </div>
-          <Button>Оформить заказ</Button>
         </div>
+        <Button className={classes.cartButtons} onClick={handlerMakeOrder}>
+          Оформить заказ
+        </Button>
       </div>
     </div>
   );

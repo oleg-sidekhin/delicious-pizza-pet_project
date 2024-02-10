@@ -53,7 +53,7 @@ function CartItem(props) {
         >
           +
         </button>
-        <strong>{totalCountPrice} ₽</strong>
+        <b>{totalCountPrice} ₽</b>
         <button onClick={() => handleClearCart({ id, size, dough })}>
           Удалить
         </button>

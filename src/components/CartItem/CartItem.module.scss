@@ -11,6 +11,10 @@
   box-shadow: $shadow;
   font-size: 14px;
 
+  @media (max-width: 576px) {
+    border-radius: 0;
+  }
+
   button {
     display: flex;
     align-items: center;

@@ -3,16 +3,52 @@
 .fullCart {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  padding: 0 80px;
   position: relative;
+
+  @media (max-width: 576px) {
+    padding: 0 10px;
+  }
 }
 
-.cartButtons {
+.cartOptions {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
   h2 {
     font-size: 28px;
+
+    @media (max-width: 576px) {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 20px;
+    margin-bottom: 0;
+  }
+}
+
+.cartButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: lighten($orangeColor, 15);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  font-size: 18px;
+
+  &:hover {
+    background-color: darken($orangeColor, 1);
+  }
+
+  @media (max-width: 576px) {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }
 
@@ -20,24 +56,28 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 80vw;
+
+  @media (max-width: 576px) {
+    width: 100vw;
+  }
 }
 
 .cartInfo {
-  position: sticky;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #fff;
-  bottom: 20px;
   box-shadow: $shadow;
-  border-radius: 15px;
-  padding: 40px;
+  padding: 21px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 
-  @media (max-width: 900px) {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
+  @media (max-width: 767px) {
+    padding: 20px 30px;
   }
 }
 
@@ -46,8 +86,34 @@
   align-items: center;
   gap: 30px;
 
-  @media (max-width: 900px) {
+  span:first-child {
+    margin-right: 40px;
+  }
+
+  @media (max-width: 767px) {
     flex-direction: column;
+    align-items: start;
     gap: 10px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    span:first-child {
+      margin-right: 10px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+}
+
+.totalAmountandCount {
+  display: flex;
+
+  @media (max-width: 410px) {
+    display: flex;
+    flex-direction: column;
   }
 }

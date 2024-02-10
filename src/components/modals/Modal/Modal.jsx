@@ -50,6 +50,15 @@ function PizzaModal() {
     }
   }, [dispatch]);
 
+  useEffect(() => {
+    if (location.state.background) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   const handlePostItem = () => {
     const cartItem = {
       id: uuidv4(),

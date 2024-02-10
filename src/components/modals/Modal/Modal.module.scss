@@ -15,17 +15,26 @@
 .modal {
   position: relative;
   display: flex;
-  max-width: 900px;
+  max-width: 800px;
   background-color: white;
   border-radius: 20px;
-  padding: 80px 40px;
+  padding: 60px 40px;
+  margin: 40px;
 
-  @media (max-width: 1000px) {
-    padding: 40px;
-    min-width: 450px;
-    justify-content: center;
-    align-items: center;
+  @media (max-width: 767px) {
     flex-direction: column;
+    align-items: center;
+    padding: 30px 120px;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 60px 40px 30px 40px;
   }
 }
 
@@ -40,8 +49,12 @@
   background-color: transparent;
   cursor: pointer;
 
-  @media (max-width: 600px) {
-    top: 8px;
+  @media (max-width: 992px) {
+    top: 0;
+    right: 10px;
+  }
+
+  @media (max-width: 576px) {
     right: 20px;
   }
 }
@@ -56,26 +69,38 @@
     transform: scale(1.2);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 992px) {
+    top: 0;
+    right: 20px;
     color: black;
+  }
+
+  @media (max-width: 576px) {
+    width: 60px;
+    height: 60px;
   }
 }
 
 .imageModal {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 
   img {
-    margin-right: 40px;
-    width: 400px;
-    height: 400px;
-  }
+    width: 350px;
+    height: 350px;
+    margin-right: 20px;
 
-  @media (max-width: 1300px) {
-    margin: 0 auto;
-    img {
-      width: 280px;
-      height: 280px;
+    @media (max-width: 992px) {
+      width: 300px;
+      height: 300px;
+    }
+
+    @media (max-width: 576px) {
+      width: 250px;
+      height: 250px;
+      margin-left: 30px;
+      margin-bottom: 20px;
     }
   }
 }
@@ -83,14 +108,24 @@
 .infoModal {
   display: flex;
   flex-direction: column;
+
   h3 {
     font-size: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   p {
     margin-bottom: 50px;
     font-size: 18px;
+
+    @media (max-width: 992px) {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 576px) {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -106,12 +141,17 @@
   transition: all 0.2s ease-in;
   cursor: pointer;
   font-size: 20px;
+  width: 100%;
 
   &:hover {
     background-color: darken($orangeColor, 9);
   }
 
-  @media (max-width: 1120px) {
-    width: 100%;
+  @media (max-width: 576px) {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 75%;
+    bottom: 30px;
   }
 }

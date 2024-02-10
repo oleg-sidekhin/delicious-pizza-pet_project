@@ -1,5 +1,6 @@
 import { FiShoppingCart } from 'react-icons/fi';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { IoArrowBack } from 'react-icons/io5';
 
 import { useTotalCount } from '../../hooks/useTotalCount';
 import Button from '../UI/Button/Button';
@@ -24,7 +25,7 @@ function Header() {
         </Link>
         {location.pathname === '/cart' ? (
           <Button onClick={() => navigate(-1)} className={classes.backbtn}>
-            Вернуться Назад
+            <IoArrowBack className={classes.backArrow} /> Назад
           </Button>
         ) : (
           <Link to="cart">

@@ -105,6 +105,15 @@
 
   &:hover {
     background-color: darken($orangeColor, 9);
+
+    .backArrow {
+      transform: translateX(-5px);
+    }
+  }
+
+  .backArrow {
+    margin-right: 10px;
+    transition: all 0.2s ease-in;
   }
 
   @media (max-width: 575px) {

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Outlet, useLocation, Link } from 'react-router-dom';
 
 import { selectCombos, fetchCombos } from '../../../redux/slices/comboSlice';
+import { selectFilterSort } from '../../../redux/slices/filterSlice';
 
 import ItemCard from '../../ItemCard/ItemCard';
 import CSLoader from '../../loaders/Combo&SnacksLoader/CSLoader';
@@ -10,13 +11,14 @@ import classes from './ComboSection.module.scss';
 
 function ComboSection() {
   const { combos, isLoading } = useSelector(selectCombos);
+  const { activeSort, activeOrder } = useSelector(selectFilterSort);
   const dispatch = useDispatch();
   const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(fetchCombos());
-  }, [dispatch]);
+    dispatch(fetchCombos({ activeSort, activeOrder }));
+  }, [dispatch, activeSort, activeOrder]);
 
   return (
     <section className={classes.wrapper}>

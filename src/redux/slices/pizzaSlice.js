@@ -11,7 +11,7 @@ export const fetchPizzas = createAsyncThunk(
   async ({ activeCategory, activeSort, activeOrder }) => {
     try {
       const { data } = await axios.get(
-        `https://json-server-pizza-seven.vercel.app/pizzas?`,
+        'https://json-server-pizza-seven.vercel.app/pizzas?',
         {
           params: {
             category_like: activeCategory,

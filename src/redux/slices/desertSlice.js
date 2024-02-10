@@ -8,10 +8,16 @@ const initialState = {
 
 export const fetchDeserts = createAsyncThunk(
   'deserts/fetchDeserts',
-  async () => {
+  async ({ activeSort, activeOrder }) => {
     try {
       const { data } = await axios.get(
-        'https://json-server-pizza-seven.vercel.app/deserts'
+        'https://json-server-pizza-seven.vercel.app/deserts?',
+        {
+          params: {
+            _sort: activeSort,
+            _order: activeOrder,
+          },
+        }
       );
       return data;
     } catch (error) {

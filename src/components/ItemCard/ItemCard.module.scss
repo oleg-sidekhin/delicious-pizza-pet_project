@@ -2,12 +2,34 @@
   position: relative;
   padding: 5px;
   max-width: 300px;
-  min-height: 460px;
+  min-height: 470px;
 
   h3 {
     font-size: 20px;
     margin-bottom: 10px;
     margin-top: 10px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  @media (max-width: 750px) {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.cardDrinks {
+  position: relative;
+  padding: 5px;
+  max-width: 300px;
+  min-height: 400px;
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
   }
 
   p {

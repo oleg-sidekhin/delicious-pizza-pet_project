@@ -6,16 +6,25 @@ const initialState = {
   isLoading: 'idle',
 };
 
-export const fetchCombos = createAsyncThunk('combos/fetchCombos', async () => {
-  try {
-    const { data } = await axios.get(
-      'https://json-server-pizza-seven.vercel.app/combos'
-    );
-    return data;
-  } catch (error) {
-    alert('Ошибка загрузки');
+export const fetchCombos = createAsyncThunk(
+  'combos/fetchCombos',
+  async ({ activeSort, activeOrder }) => {
+    try {
+      const { data } = await axios.get(
+        'https://json-server-pizza-seven.vercel.app/combos?',
+        {
+          params: {
+            _sort: activeSort,
+            _order: activeOrder,
+          },
+        }
+      );
+      return data;
+    } catch (error) {
+      alert('Ошибка загрузки');
+    }
   }
-});
+);
 
 const combosSlice = createSlice({
   name: 'combos',

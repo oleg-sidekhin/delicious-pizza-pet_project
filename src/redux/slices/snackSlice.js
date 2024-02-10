@@ -6,16 +6,25 @@ const initialState = {
   isLoading: 'idle',
 };
 
-export const fetchSnacks = createAsyncThunk('snacks/fetchSnacks', async () => {
-  try {
-    const { data } = await axios.get(
-      'https://json-server-pizza-seven.vercel.app/snacks'
-    );
-    return data;
-  } catch (error) {
-    alert('Ошибка загрузки');
+export const fetchSnacks = createAsyncThunk(
+  'snacks/fetchSnacks',
+  async ({ activeSort, activeOrder }) => {
+    try {
+      const { data } = await axios.get(
+        'https://json-server-pizza-seven.vercel.app/snacks?',
+        {
+          params: {
+            _sort: activeSort,
+            _order: activeOrder,
+          },
+        }
+      );
+      return data;
+    } catch (error) {
+      alert('Ошибка загрузки');
+    }
   }
-});
+);
 
 const snacksSlice = createSlice({
   name: 'snacks',
